@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1noxc83mbm6u"]
+[gd_scene load_steps=6 format=3 uid="uid://b1noxc83mbm6u"]
 
 [ext_resource type="PackedScene" uid="uid://comch7r33c56q" path="res://gracz1.tscn" id="1_exnj1"]
-[ext_resource type="Script" path="res://gracz1.gd" id="2_c20jg"]
 [ext_resource type="PackedScene" uid="uid://bk8sef6d5s47p" path="res://Klocekv1.tscn" id="3_hm0ck"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tk65y"]
@@ -16,6 +15,8 @@ size = Vector2(1000, 1000)
 size = Vector3(1000, 1, 1000)
 
 [node name="Node3D" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_y8noj")
@@ -25,7 +26,9 @@ shape = SubResource("BoxShape3D_5kc8x")
 
 [node name="Node3D" parent="." instance=ExtResource("1_exnj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654297, 2.02513, 1.79388)
-script = ExtResource("2_c20jg")
 
 [node name="Node3D2" parent="." instance=ExtResource("3_hm0ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.298057, 0.5, -7.70138)
+
+[node name="Node3D3" parent="." instance=ExtResource("3_hm0ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175239, 2.40335, -7.55233)
