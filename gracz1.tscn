@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://comch7r33c56q"]
+
+[ext_resource type="Script" path="res://gracz1.gd" id="1_v28hg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mvjhs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytug0"]
+albedo_color = Color(0.0509804, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jmmo2"]
+material = SubResource("StandardMaterial3D_ytug0")
+
+[node name="Node3D" type="CharacterBody3D"]
+script = ExtResource("1_v28hg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_mvjhs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_jmmo2")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.894755, 0.446557, 0, -0.446557, 0.894755, 0, 2.90393, 2.57588)
