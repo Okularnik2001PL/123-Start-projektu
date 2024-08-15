@@ -32,3 +32,6 @@ debug_shape_custom_color = Color(0, 0.705882, 0, 1)
 [node name="Camera3D" type="Camera3D" parent="Camera3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.894755, 0.446557, 0, -0.446557, 0.894755, 0, 2.40393, 2.97588)
 current = true
+
+[node name="nosze" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

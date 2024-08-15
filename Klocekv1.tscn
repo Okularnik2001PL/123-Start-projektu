@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk8sef6d5s47p"]
+[gd_scene load_steps=5 format=3 uid="uid://bk8sef6d5s47p"]
+
+[ext_resource type="Script" path="res://Klocekv1.gd" id="1_jm7lg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d7376"]
 
@@ -11,6 +13,7 @@ material = SubResource("StandardMaterial3D_w6n4t")
 [node name="Node3D" type="RigidBody3D"]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_jm7lg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_d7376")

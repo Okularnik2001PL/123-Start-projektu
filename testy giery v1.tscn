@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1noxc83mbm6u"]
+[gd_scene load_steps=8 format=3 uid="uid://b1noxc83mbm6u"]
 
 [ext_resource type="PackedScene" uid="uid://comch7r33c56q" path="res://gracz1.tscn" id="1_exnj1"]
 [ext_resource type="PackedScene" uid="uid://bk8sef6d5s47p" path="res://Klocekv1.tscn" id="3_hm0ck"]
@@ -14,6 +14,12 @@ size = Vector2(1000, 1000)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5kc8x"]
 size = Vector3(1000, 1, 1000)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gs628"]
+size = Vector3(500, 500, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sa63v"]
+size = Vector3(500, 500, 500)
+
 [node name="Node3D" type="StaticBody3D"]
 collision_layer = 3
 collision_mask = 3
@@ -27,8 +33,19 @@ shape = SubResource("BoxShape3D_5kc8x")
 [node name="Node3D" parent="." instance=ExtResource("1_exnj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654297, 2.02513, 1.79388)
 
-[node name="Node3D2" parent="." instance=ExtResource("3_hm0ck")]
+[node name="Node3D2" parent="." groups=["podnieś"] instance=ExtResource("3_hm0ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.298057, 0.5, -7.70138)
 
-[node name="Node3D3" parent="." instance=ExtResource("3_hm0ck")]
+[node name="Node3D3" parent="." groups=["podnieś"] instance=ExtResource("3_hm0ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175239, 2.40335, -7.55233)
+
+[node name="pagurek" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 261.404, 0, -332.058)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pagurek"]
+shape = SubResource("BoxShape3D_gs628")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pagurek"]
+mesh = SubResource("BoxMesh_sa63v")
