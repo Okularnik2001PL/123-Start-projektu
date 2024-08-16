@@ -3,16 +3,20 @@ var camera=1
 var prędkośc_obrotu=0.1
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var ładunek=3
 var tszymam=null
 var Skszynka=preload("res://Klocekv1.tscn")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+func _ready():
+	odswierz()
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x*prędkośc_obrotu))
 		get_node("Camera3D2").rotate_x(deg_to_rad(-event.relative.y*prędkośc_obrotu))
 
 func _physics_process(delta):
+	print(str($Camera3D2/RayCast3D.get_collider()))
 	if Input.is_action_just_pressed("zmiana_kamery"):
 		camera=-camera
 		match camera:
@@ -28,14 +32,21 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	if Input.is_action_just_pressed("spawn")&&tszymam==null:
-		var szkszynia=Skszynka.instantiate()
-		add_child(szkszynia)
-		podniesiony(szkszynia)
+		if ładunek>=1:
+			var szkszynia=Skszynka.instantiate()
+			add_child(szkszynia)
+			podniesiony(szkszynia)
+			ładunek-=1
+			odswierz()
 	if Input.is_action_just_pressed("Prawy_M"):
 		if $Camera3D2/RayCast3D.get_collider()!=null:
-			if $Camera3D2/RayCast3D.get_collider().is_in_group("podnieś") && tszymam==null:
-				podniesiony($Camera3D2/RayCast3D.get_collider())
-			else:
+			if $Camera3D2/RayCast3D.get_collider().is_in_group("podnieś"):
+				if tszymam==null:
+					podniesiony($Camera3D2/RayCast3D.get_collider())
+			if  $Camera3D2/RayCast3D.get_collider().is_in_group("zbieraj"):
+				ładunek+=10
+				odswierz()
+			else :
 				odluz()
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -77,3 +88,5 @@ func punkt():
 	else:
 		punkt= $Camera3D2/RayCast3D.global_transform.origin 
 	return punkt
+func odswierz():
+	$Camera3D2/Inter1/Label.text=str(ładunek)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://comch7r33c56q"]
+[gd_scene load_steps=8 format=3 uid="uid://comch7r33c56q"]
 
 [ext_resource type="Script" path="res://gracz1.gd" id="1_v28hg"]
+[ext_resource type="PackedScene" uid="uid://dwbb56wd1y4lh" path="res://inter_1.tscn" id="2_t7j4i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mvjhs"]
 
@@ -9,6 +10,13 @@ albedo_color = Color(0.0509804, 1, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jmmo2"]
 material = SubResource("StandardMaterial3D_ytug0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0gtv"]
+albedo_color = Color(1, 0.0196078, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_cyf4d"]
+material = SubResource("StandardMaterial3D_u0gtv")
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Node3D" type="CharacterBody3D"]
 script = ExtResource("1_v28hg")
@@ -29,9 +37,16 @@ target_position = Vector3(0, 0, -10)
 collision_mask = 2
 debug_shape_custom_color = Color(0, 0.705882, 0, 1)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D2/RayCast3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PrismMesh_cyf4d")
+skeleton = NodePath("../../..")
+
 [node name="Camera3D" type="Camera3D" parent="Camera3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.894755, 0.446557, 0, -0.446557, 0.894755, 0, 2.40393, 2.97588)
 current = true
+
+[node name="Inter1" parent="Camera3D2" instance=ExtResource("2_t7j4i")]
 
 [node name="nosze" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
