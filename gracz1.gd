@@ -43,7 +43,7 @@ func _physics_process(delta):
 			if $Camera3D2/RayCast3D.get_collider().is_in_group("podnieś"):
 				if tszymam==null:
 					podniesiony($Camera3D2/RayCast3D.get_collider())
-			if  $Camera3D2/RayCast3D.get_collider().is_in_group("zbieraj"):
+			elif  $Camera3D2/RayCast3D.get_collider().is_in_group("zbieraj"):
 				ładunek+=10
 				odswierz()
 			else :
@@ -89,4 +89,4 @@ func punkt():
 		punkt= $Camera3D2/RayCast3D.global_transform.origin 
 	return punkt
 func odswierz():
-	$Camera3D2/Inter1/Label.text=str(ładunek)
+	$Camera3D2/Inter1/Kloceklicz/Label.text=str(ładunek)

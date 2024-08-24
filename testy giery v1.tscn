@@ -54,7 +54,7 @@ shape = SubResource("BoxShape3D_gs628")
 mesh = SubResource("BoxMesh_sa63v")
 
 [node name="Node3D4" parent="." instance=ExtResource("3_cixuv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.45, 0.5, -20.878)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.45, 0.805397, -20.878)
 
 [node name="meta" parent="." instance=ExtResource("4_r4gvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.445, 253.902, -312.521)
