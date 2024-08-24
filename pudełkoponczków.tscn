@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c66xrvb05nau0"]
+
+[ext_resource type="Texture2D" uid="uid://n07ypktf1o20" path="res://ponczekDlaAstji.png" id="1_jurkj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0s6ox"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8wx0"]
+albedo_texture = ExtResource("1_jurkj")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cp6p6"]
+material = SubResource("StandardMaterial3D_s8wx0")
+
+[node name="Node3D" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_0s6ox")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0.5, 0)
+mesh = SubResource("QuadMesh_cp6p6")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_cp6p6")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1, 0)
+mesh = SubResource("QuadMesh_cp6p6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.5, 0.5, 0)
+mesh = SubResource("QuadMesh_cp6p6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
+mesh = SubResource("QuadMesh_cp6p6")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, -0.5)
+mesh = SubResource("QuadMesh_cp6p6")

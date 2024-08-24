@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1noxc83mbm6u"]
+[gd_scene load_steps=11 format=3 uid="uid://b1noxc83mbm6u"]
 
 [ext_resource type="PackedScene" uid="uid://comch7r33c56q" path="res://gracz1.tscn" id="1_exnj1"]
 [ext_resource type="PackedScene" uid="uid://bj1t7xlfl3lou" path="res://kupka.tscn" id="3_cixuv"]
 [ext_resource type="PackedScene" uid="uid://bk8sef6d5s47p" path="res://Klocekv1.tscn" id="3_hm0ck"]
 [ext_resource type="PackedScene" uid="uid://ctnmg1beuqgo4" path="res://meta.tscn" id="4_r4gvk"]
+[ext_resource type="PackedScene" uid="uid://c66xrvb05nau0" path="res://pudełkoponczków.tscn" id="5_gr4ry"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tk65y"]
 vertex_color_is_srgb = true
@@ -57,3 +58,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.45, 0.5, -20.878)
 
 [node name="meta" parent="." instance=ExtResource("4_r4gvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.445, 253.902, -312.521)
+
+[node name="Node3D5" parent="." instance=ExtResource("5_gr4ry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3925, 0.841062, 8.24091)
