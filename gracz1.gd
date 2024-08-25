@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 var ładunek=3
 var tszymam=null
 var Skszynka=preload("res://Klocekv1.tscn")
+var startowa=Vector3i(2,2,0)
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
@@ -31,6 +32,8 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		if global_position.y<=-1000:
+			global_position=startowa
 	if Input.is_action_just_pressed("spawn")&&tszymam==null:
 		if ładunek>=1:
 			var szkszynia=Skszynka.instantiate()

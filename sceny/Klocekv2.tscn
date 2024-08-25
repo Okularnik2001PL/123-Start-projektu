@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci6id3seyjv1b"]
+
+[ext_resource type="Script" path="res://Klocekv1.gd" id="1_82cb6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7376"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6n4t"]
+albedo_color = Color(0.619608, 0.894118, 0.913725, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k24m2"]
+material = SubResource("StandardMaterial3D_w6n4t")
+
+[node name="Node3D" type="RigidBody3D"]
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+script = ExtResource("1_82cb6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_d7376")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_k24m2")

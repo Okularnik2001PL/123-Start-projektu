@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://da2hag7wm3e82"]
+
+[ext_resource type="Script" path="res://mesh_instance_3d.gd" id="1_ia8fx"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7nas0"]
+size = Vector2(1, 2)
+
+[node name="Lustro" type="MeshInstance3D"]
+mesh = SubResource("QuadMesh_7nas0")
+script = ExtResource("1_ia8fx")
+
+[node name="MeshInstance3D" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.28439, 0.074353)
