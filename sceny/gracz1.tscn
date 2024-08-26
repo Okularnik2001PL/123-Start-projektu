@@ -62,3 +62,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.3, -0.5)
 mesh = SubResource("QuadMesh_5qkyk")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.997218, 0, -0.0745436, -0.00675867, 0.995881, 0.0904151, 0.0742365, 0.0906673, -0.99311, 0, 0.46906, -4.74623)

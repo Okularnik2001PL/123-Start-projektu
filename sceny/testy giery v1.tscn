@@ -65,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.445, 249.804, -312.521)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3925, 0.841062, 8.24091)
 
 [node name="Lustro" parent="." instance=ExtResource("6_rayle")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4185, 2.27982, -80.8022)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4185, 2.18839, -80.8022)
 
 [node name="Node3D6" parent="." instance=ExtResource("7_ci1tf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.26, 253.021, -354.834)

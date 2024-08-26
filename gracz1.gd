@@ -5,7 +5,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var ładunek=3
 var tszymam=null
-var Skszynka=preload("res://Klocekv1.tscn")
+var Skszynka=preload("res://sceny/Klocekv1.tscn")
 var startowa=Vector3i(2,2,0)
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -19,15 +19,24 @@ func _input(event):
 func _physics_process(delta):
 	print(str($Camera3D2/RayCast3D.get_collider()))
 	if Input.is_action_just_pressed("zmiana_kamery"):
-		camera=-camera
+		camera+=1
+		if camera>2:
+			camera=0
 		match camera:
-			-1:
+			0:
 				$Camera3D2/Camera3D.current=true
 				$Camera3D2.current=false
+				$Camera3D.current=false
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			1:
 				$Camera3D2/Camera3D.current=false
 				$Camera3D2.current=true
+				$Camera3D.current=false
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			2:
+				$Camera3D2/Camera3D.current=false
+				$Camera3D2.current=false
+				$Camera3D.current=true
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Add the gravity.
 	if not is_on_floor():
