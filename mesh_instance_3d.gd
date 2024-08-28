@@ -3,6 +3,7 @@ var viewport
 var viewport_texture
 var material
 func _ready():
+	$MeshInstance3D/Camera3D.global_position=global_position
 	# Uzyskujemy dostęp do Viewport
 	viewport = $MeshInstance3D  # Zakładamy, że MyViewport to twój Viewport
 	

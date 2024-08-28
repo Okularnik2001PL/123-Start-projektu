@@ -16,4 +16,4 @@ script = ExtResource("1_ia8fx")
 [node name="MeshInstance3D" type="SubViewport" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.28439, 0.074353)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.720656, 0.074353)
