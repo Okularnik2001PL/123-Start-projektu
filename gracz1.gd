@@ -1,7 +1,7 @@
 extends CharacterBody3D
 var camera=1
 var prędkośc_obrotu=0.1
-const SPEED = 5.0
+var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var ładunek=3
 var tszymam=null
@@ -50,6 +50,8 @@ func _physics_process(delta):
 			podniesiony(szkszynia)
 			ładunek-=1
 			odswierz()
+	if Input.is_action_just_pressed("Bieg"):
+		SPEED=100
 	if Input.is_action_just_pressed("Prawy_M"):
 		if $Camera3D2/RayCast3D.get_collider()!=null:
 			if $Camera3D2/RayCast3D.get_collider().is_in_group("podnieś"):
