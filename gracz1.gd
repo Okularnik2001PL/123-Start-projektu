@@ -52,6 +52,8 @@ func _physics_process(delta):
 			odswierz()
 	if Input.is_action_just_pressed("Bieg"):
 		SPEED=100
+	else:
+		SPEED=5
 	if Input.is_action_just_pressed("Prawy_M"):
 		if $Camera3D2/RayCast3D.get_collider()!=null:
 			if $Camera3D2/RayCast3D.get_collider().is_in_group("podnieś"):
@@ -83,8 +85,8 @@ func podniesiony(obiekt):
 	obiekt.set_collision_mask_value(1,false)
 	obiekt.gravity_scale = 0 
 	obiekt.get_parent().remove_child(obiekt)
-	add_child(obiekt)
-	obiekt.global_position=$nosze.global_position
+	$CollisionShape3D/MeshInstance3D/nosze.add_child(obiekt)
+	obiekt.global_position=$CollisionShape3D/MeshInstance3D/nosze.global_position
 	tszymam=obiekt
 func odluz():
 	if tszymam!=null:

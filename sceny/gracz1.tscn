@@ -36,6 +36,9 @@ shape = SubResource("CapsuleShape3D_mvjhs")
 mesh = SubResource("CapsuleMesh_jmmo2")
 skeleton = NodePath("../..")
 
+[node name="nosze" type="Node3D" parent="CollisionShape3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211596, -0.745229)
+
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.4)
 
@@ -55,9 +58,6 @@ transform = Transform3D(1, 0, 0, 0, 0.894755, 0.446557, 0, -0.446557, 0.894755, 
 current = true
 
 [node name="Inter1" parent="Camera3D2" instance=ExtResource("2_t7j4i")]
-
-[node name="nosze" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.3, -0.5)
